@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import styled, { css } from "styled-components";
 import color from "color";
 
+import ButtonsWrapper, { Wrapper } from "./buttons-wrapper";
 import { roundedBorder, swingAnimation } from "./styles";
 import { Colors, Layout, Typography } from "./consts";
 const { baseFontSize } = Typography;
@@ -14,7 +15,7 @@ function getColor(props) {
   return buttonColor;
 }
 
-const Button = styled.button.attrs({
+export const Button = styled.button.attrs({
   color: props => props.color || getColor(props),
 })`
   background-color: transparent;
@@ -41,12 +42,16 @@ const Button = styled.button.attrs({
 const FullButton = Button.extend`
   color: white;
   background-color: ${props => props.color};
+
+  ${ButtonsWrapper}:hover & {
+    opacity: 0.5;
+  }
 `;
 
 const Link = Button.withComponent("a");
 
 export default () => (
-  <Fragment>
+  <ButtonsWrapper>
     <Button>Press me!</Button>
     <Button primary>Press me!</Button>
     <Button primary darken>Press me!</Button>
@@ -56,5 +61,5 @@ export default () => (
     <FullButton>Press me!</FullButton>
     <FullButton danger>Press me!</FullButton>
     <Link primary href="https://gorrion.io/">Gorrion</Link>
-  </Fragment>
+  </ButtonsWrapper>
 );
