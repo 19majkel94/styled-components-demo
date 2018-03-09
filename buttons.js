@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import color from "color";
 
+import { roundedBorder } from "./styles";
 import { Colors, Layout, Typography } from "./consts";
 const { baseFontSize } = Typography;
 
@@ -17,8 +18,7 @@ const Button = styled.button.attrs({
   color: props => props.color || getColor(props),
 })`
   background-color: transparent;
-  border: 3px solid ${props => props.color};
-  border-radius: 10px;
+  ${roundedBorder(20)}
   padding: ${Layout.padding / 2}px ${Layout.padding}px;
   font-size: ${baseFontSize};
   color: ${props => props.color};
