@@ -8,6 +8,17 @@ const Button = styled.button`
   padding: 8px 16px;
   font-size: 14px;
   color: #666;
+  transition: transform .1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 export default () => (
