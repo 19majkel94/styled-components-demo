@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import color from "color";
 
-import { roundedBorder } from "./styles";
+import { roundedBorder, swingAnimation } from "./styles";
 import { Colors, Layout, Typography } from "./consts";
 const { baseFontSize } = Typography;
 
@@ -25,6 +25,9 @@ const Button = styled.button.attrs({
   transition: transform .1s ease-in-out;
 
   &:hover {
+    ${props => !props.disabled && css`
+      animation: ${swingAnimation(10)} .5s linear;
+    `}
     cursor: ${props => props.disabled ? "no-drop": "pointer"};
   }
   &:focus {
