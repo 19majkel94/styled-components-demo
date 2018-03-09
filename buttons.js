@@ -2,8 +2,11 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import color from "color";
 
+import { Colors, Layout, Typography } from "./consts";
+const { baseFontSize } = Typography;
+
 function getColor(props) {
-  let buttonColor = props.primary ? "#007bff" : props.danger ? "#F66" : "#888";
+  let buttonColor = props.primary ? "#007bff" : props.danger ? "#F66" : Colors.gray;
   if (props.darken) {
     buttonColor = color(buttonColor).darken(0.25).hex();
   }
@@ -16,8 +19,8 @@ const Button = styled.button.attrs({
   background-color: transparent;
   border: 3px solid ${props => props.color};
   border-radius: 10px;
-  padding: 8px 16px;
-  font-size: 14px;
+  padding: ${Layout.padding / 2}px ${Layout.padding}px;
+  font-size: ${baseFontSize};
   color: ${props => props.color};
   transition: transform .1s ease-in-out;
 
