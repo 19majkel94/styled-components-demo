@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 
 const Button = styled.button.attrs({
-  color: props => props.primary ? "#007bff" : props.danger ? "#F66" : "#888",
+  color: props => props.color || (props.primary ? "#007bff" : props.danger ? "#F66" : "#888"),
 })`
   background-color: transparent;
   border: 3px solid ${props => props.color};
@@ -29,5 +29,7 @@ export default () => (
     <Button primary>Press me!</Button>
     <Button danger>Press me!</Button>
     <Button primary disabled>Press me!</Button>
+    <Button color="#F70">Press me!</Button>
+    <Button color="palevioletred">Press me!</Button>
   </Fragment>
 );
