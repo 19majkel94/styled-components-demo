@@ -35,6 +35,11 @@ const Button = styled.button.attrs({
   }
 `;
 
+const FullButton = Button.extend`
+  color: white;
+  background-color: ${props => props.color};
+`;
+
 export default () => (
   <Fragment>
     <Button>Press me!</Button>
@@ -43,5 +48,7 @@ export default () => (
     <Button danger>Press me!</Button>
     <Button primary disabled>Press me!</Button>
     <Button color="palevioletred">Press me!</Button>
+    <FullButton>Press me!</FullButton>
+    <FullButton danger>Press me!</FullButton>
   </Fragment>
 );
