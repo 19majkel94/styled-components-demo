@@ -40,6 +40,8 @@ const FullButton = Button.extend`
   background-color: ${props => props.color};
 `;
 
+const Link = Button.withComponent("a");
+
 export default () => (
   <Fragment>
     <Button>Press me!</Button>
@@ -50,5 +52,6 @@ export default () => (
     <Button color="palevioletred">Press me!</Button>
     <FullButton>Press me!</FullButton>
     <FullButton danger>Press me!</FullButton>
+    <Link primary href="https://gorrion.io/">Gorrion</Link>
   </Fragment>
 );
