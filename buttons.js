@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 const Button = styled.button`
   background-color: transparent;
-  border: 3px solid #CCC;
+  border: 3px solid ${props => props.primary ? "#007bff" : "#CCC"};
   border-radius: 10px;
   padding: 8px 16px;
   font-size: 14px;
-  color: #666;
+  color: ${props => props.primary ? "#007bff" : "#666"};
   transition: transform .1s ease-in-out;
 
   &:hover {
@@ -24,5 +24,6 @@ const Button = styled.button`
 export default () => (
   <Fragment>
     <Button>Press me!</Button>
+    <Button primary>Press me!</Button>
   </Fragment>
 );
