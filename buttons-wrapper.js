@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Button } from "./buttons";
+import { media } from "./style-utils";
 
 export default styled.div`
   width: 100%;
@@ -12,4 +13,7 @@ export default styled.div`
   & > * {
     margin: 8px;
   }
+  ${media.handheld`
+    background-color: lavenderblush;
+  `}
 `;

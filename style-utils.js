@@ -1,11 +1,11 @@
 import { css, keyframes } from "styled-components";
 
-export const roundedBorder = (px) => css`
+export const roundedBorder = px => css`
   border: 3px solid ${props => props.color || "inherit"};
   border-radius: ${px}px;
 `;
 
-export const swingAnimation = (deg) => keyframes`
+export const swingAnimation = deg => keyframes`
   0% {
     transform: rotate(0deg);
   }
@@ -22,3 +22,11 @@ export const swingAnimation = (deg) => keyframes`
     transform: rotate(0deg);
   }
 `;
+
+export const media = {
+  handheld: (...args) => css`
+    @media (max-width: 420px) {
+      ${css(...args)};
+    }
+  `
+};

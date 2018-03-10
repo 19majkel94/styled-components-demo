@@ -3,7 +3,7 @@ import styled, { css, ThemeProvider } from "styled-components";
 import color from "color";
 
 import ButtonsWrapper, { Wrapper } from "./buttons-wrapper";
-import { roundedBorder, swingAnimation } from "./styles";
+import { roundedBorder, swingAnimation } from "./style-utils";
 import { Colors, Layout, Typography } from "./consts";
 const { baseFontSize } = Typography;
 
